@@ -11,7 +11,13 @@ describe "User searches for articles" do
 
   it 'results include a links to audio files' do
     search_for search_term
+
     expect(page).to have_link "Listen", href: "http://media.scpr.org/audio/features/20160421_features1021.mp3?via=api"
+  end
+
+  it 'results include the correct numer of links' do
+    search_for search_term
+
     expect(page).to have_css "a", count: 5
   end
 end
