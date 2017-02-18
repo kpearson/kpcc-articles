@@ -5,6 +5,9 @@ A simple search interface for the KPCC article archive.
 ## Todos
 
 * [] Add the VCR gem to reduce hits to the target API when testing.
+* [] Check how the "types" in the request are being formatted in the request
+     service adapeter. `app/services/kpcc_api_service.rb:28`
+* [] Test for case sensitivity in search.
 
 ### Results Page
 
@@ -30,7 +33,7 @@ Later iteration.
 
 #### Results
 
-* [] Show audio file link if result has audio file.
+* [x] Show audio file link if result has audio file.
      I'd like to see a better way, but this will get us there for now.
      ```ruby
      <% if result.audio_url %>

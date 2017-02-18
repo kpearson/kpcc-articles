@@ -23,9 +23,10 @@ class KpccApiService
   end
 
   def kpcc_article_search
-    connection.get do |request|
+      connection.get do |request|
       request.url "/api/v3/articles", :query => search_term
       request.params["types"] = ["news", "blogs", "segments", "shells"]
+      #TODO param types is not formatting correctly. Seems to be working for now.
     end
   end
 
