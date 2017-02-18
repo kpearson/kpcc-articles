@@ -4,6 +4,8 @@ A simple search interface for the KPCC article archive.
 
 ## Todos
 
+* [] Add the VCR gem to reduce hits to the target API when testing.
+
 ### Results Page
 
 A few interface ideas for the results page.

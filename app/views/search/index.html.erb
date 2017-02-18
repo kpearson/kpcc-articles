@@ -3,5 +3,8 @@
 <% @search_results.each do |result| %>
   <p>
   <%= result.title %>
+  <% if result.audio_url %>
+    <%= link_to "Listen", result.audio_url %>
+  <% end %>
   </p>
 <% end %>
