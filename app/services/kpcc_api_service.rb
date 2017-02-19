@@ -3,7 +3,6 @@ require "ostruct"
 require "json"
 
 class KpccApiService
-
   def initialize(params)
     @search_term = params[:search_term]
   end
@@ -23,7 +22,7 @@ class KpccApiService
   end
 
   def kpcc_article_search
-      connection.get do |request|
+    connection.get do |request|
       request.url "/api/v3/articles", :query => search_term
       request.params["types"] = ["news", "blogs", "segments", "shells"]
       #TODO param types is not formatting correctly. Seems to be working for now.
@@ -38,3 +37,4 @@ class KpccApiService
     JSON.parse(kpcc_article_search.body)["articles"]
   end
 end
+

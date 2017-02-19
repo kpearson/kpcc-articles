@@ -24,6 +24,6 @@ end
 
 def search_for(search_term)
   visit root_path
-  fill_in "Search for", with: search_term
+  fill_in "search_term", with: search_term
   click_on "Search"
 end

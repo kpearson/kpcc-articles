@@ -9,4 +9,10 @@ describe "Kpcc api service" do
   it 'article search' do
     expect(articles.count).to eq 10
   end
+
+  it 'redirects to the new search page if a connecting error is raised' do
+    KpccApiService.new({}).stub(:articles) { raise "Faraday::ConnectionFailed" }
+
+    expect {KpccApiService.new({}).articles }.not_to raise_error
+  end
 end
