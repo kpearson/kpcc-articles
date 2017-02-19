@@ -16,7 +16,7 @@ A few interface ideas for the results page.
 #### Header
 
 Build a header with:
-* [] An app title
+* [x] An app title
 * [] Search field to a header next to the app title.
 * [] Search results count.
      Time for a decorator?
@@ -47,6 +47,6 @@ Later iteration.
 
 ### Styling
 
-* [] Style initial search page to match spec.
+* [x] Style initial search page to match spec.
 * [] Style results page header.
 * [] Style results page results.
