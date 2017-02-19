@@ -1,24 +1,52 @@
-# README
+# KPCC Article Search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple search interface for the KPCC article archive.
 
-Things you may want to cover:
+## Todos
 
-* Ruby version
+* [] Add the VCR gem to reduce hits to the target API when testing.
+* [] Check how the "types" in the request are being formatted in the request
+     service adapeter. `app/services/kpcc_api_service.rb:28`
+* [] Test for case sensitivity in search.
 
-* System dependencies
+### Results Page
 
-* Configuration
+A few interface ideas for the results page.
 
-* Database creation
+#### Header
 
-* Database initialization
+Build a header with:
+* [x] An app title
+* [] Search field to a header next to the app title.
+* [] Search results count.
+     Time for a decorator?
+     ```ruby
+     <p><%= @search_results.count %> articles found</p>
+     ```
 
-* How to run the test suite
+Later iteration.
 
-* Services (job queues, cache servers, search engines, etc.)
+* [] Search filter for type of article.
+       NewsStory (news, news_story)
+       BlogEntry (blogs, blog_entry)
+       ShowSegment (segments, show_segment)
 
-* Deployment instructions
+#### Results
 
-* ...
+* [x] Show audio file link if result has audio file.
+     I'd like to see a better way, but this will get us there for now.
+     ```ruby
+     <% if result.audio_url %>
+       <%= link_to "Listen", result.audio_url %>
+     <% end %>
+     ```
+
+Later iteration.
+
+* [] Interface to play audio file from results page, instead of a link.
+
+### Styling
+
+* [x] Style initial search page to match spec.
+* [] Style results page header.
+* [] Style results page results.

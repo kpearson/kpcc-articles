@@ -1,0 +1,14 @@
+<h1>KPCC Article Search</h1>
+
+<div class="search-results-group">
+  <% @search_results.each do |result| %>
+    <div class="search-result">
+      <p class="result-title">
+        <%= result.title %>
+      </p>
+      <% if result.audio_url %>
+        <%= link_to "Listen to related audio.", result.audio_url %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
