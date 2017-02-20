@@ -6,9 +6,14 @@
         <p class="result-title">
         <%= result.title %>
         </p>
+        <p>
+        <%= result.excerpt.html_safe %>
+        </p>
+        <p>
         <% if result.audio_url %>
           <%= link_to "Listen to related audio.", result.audio_url %>
         <% end %>
+        </p>
       </div>
     <% end %>
   </div>

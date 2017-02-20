@@ -16,3 +16,13 @@ describe "Kpcc api service" do
     expect {KpccApiService.new({}).articles }.not_to raise_error
   end
 end
+
+describe "Kpcc api service excerpt search" do
+  let(:text) {"When I think about it, Virgin Galactic is the bomb."}
+  let(:search_term) { "Virgin Galactic" }
+  let(:text_search) { KpccApiService::Excerpt.new(search_term, text) }
+
+  it 'finds the term in the body of the responses' do
+    expect(text_search.search).to eq("I think about it, <strong>Virgin Galactic</strong>")
+  end
+end

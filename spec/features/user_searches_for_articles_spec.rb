@@ -18,7 +18,7 @@ describe "User searches for articles" do
   it 'results include the correct numer of links' do
     search_for search_term
 
-    expect(page).to have_css "a", count: 5
+    expect(page).to have_css "a", count: 7
   end
 end
 
