@@ -3,4 +3,9 @@
     <li class="title">KPCC Article Search</li>
     <li> <%= link_to "New Search", root_url %></li>
   </ul>
+  <div class="container">
+    <div class="results-counter">
+      Displaying <%= @search_results.count %> results
+    </div>
+  </div>
 </div>

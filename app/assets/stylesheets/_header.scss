@@ -1,9 +1,12 @@
 .header {
   font-family: Arial;
-  // padding: 1em 2em;
-  // background-color: #1B1E22;
   margin-bottom: 1em;
-  // width: 100%;
+  .results-counter {
+    margin: 5px 0px 0px 15px;
+    padding: 3px 0px 0px 25px;
+    font-family: Arial;
+
+  }
   ul {
     list-style-type: none;
     margin: 0;
@@ -14,7 +17,7 @@
   li {
     float: left;
     display: block;
-    padding: 14px 16px;
+    padding: 24px 16px;
     a {
       color: white;
       text-align: center;
@@ -27,5 +30,8 @@
   .title {
     color: $base-color;
     text-transform: uppercase;
+    &:hover {
+      background-color: #333;
+    }
   }
 }
