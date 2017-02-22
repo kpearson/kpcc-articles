@@ -44,7 +44,7 @@ class KpccApiService
         id: article["id"],
         title: article["title"],
         url: article["url"],
-        excerpt: excerpt(article["body"])
+        excerpt: excerpt(article["body"]) || ""
       }
         .merge(article_audio(article)))
   end
@@ -63,41 +63,35 @@ class KpccApiService::Excerpt
   end
 
   def search
-    fb = format_both
-    fr = format_right
-    if fb.length >= 18
-      fb
-    elsif fr.length >= 18
-      fr
-    else
-      format_left
-    end
+    return format_both if format_both
+    return format_right if format_right
+    return format_left if format_left
   end
 
   def format_both
-    text
-      .scan(/(#{"\\S+ "*4})(#{Regexp.escape(target)})(#{" \\S+"*8})/i)
+    a = text.scan(/(#{"\\S+ "*4})(#{Regexp.escape(target)})(#{" \\S+"*8})/i)
+    a
       .flatten
       .insert(1, "<strong>")
       .insert(3, "</strong>")
-      .join
+      .join if a.any?
   end
 
   def format_left
-    text
-      .scan(/(#{"\\S+ "*4})(#{Regexp.escape(target)})/i)
+    a = text.scan(/(#{"\\S+ "*4})(#{Regexp.escape(target)})/i)
+    a
       .flatten
       .push("</strong>")
       .insert(1, "<strong>")
-      .join
+      .join if a.any?
   end
 
   def format_right
-    text
-      .scan(/(#{Regexp.escape(target)})(#{" \\S+"*8})/i)
+    a = text.scan(/(#{Regexp.escape(target)})(#{" \\S+"*8})/i)
+    a
       .flatten
       .unshift("<strong>")
       .insert(2, "</strong>")
-      .join
+      .join if a.any?
   end
 end
