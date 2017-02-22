@@ -1,7 +1,7 @@
 <div class="header">
   <ul>
-    <li class="title">KPCC Article Search</li>
-    <li> <%= link_to "New Search", root_url %></li>
+    <li class="title"> <%= link_to "KPCC Article Search",  root_url, class: "title" %></li>
+    <li> <%= render "shared/search_field" %></li>
   </ul>
   <div class="container">
     <div class="results-counter">

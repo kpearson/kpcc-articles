@@ -17,21 +17,32 @@
   li {
     float: left;
     display: block;
-    padding: 24px 16px;
+    padding: 20px 10px;
     a {
       color: white;
       text-align: center;
       text-decoration: none;
     }
-    &:hover {
-      background-color: #111;
+    .search-lable {
+      display: none;
+    }
+    .search-field {
+      border: 0;
+      height: 2.5em;
+      padding-left: 1em;
+      font-weight: bold;
+    }
+    .btn {
+      padding: 8px 32px 8px;
     }
   }
   .title {
     color: $base-color;
     text-transform: uppercase;
+    font-size: 120%;
+    margin-top: 2px;
     &:hover {
-      background-color: #333;
+      background-color: #111;
     }
   }
 }

@@ -1,0 +1,9 @@
+<div class="search-dialog">
+  <%= form_tag("/search", method: "get") do %>
+    <div>
+      <%= label_tag(:search_term, "Search term", class: "search-lable") %>
+    </div>
+    <%= text_field_tag(:search_term, "#{params[:search_term]}", class: "search-field", placeholder: "battlestar galactica") %>
+    <%= submit_tag("Search", class: "btn") %>
+  <% end %>
+</div>
